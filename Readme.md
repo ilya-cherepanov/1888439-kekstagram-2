@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Илья Черепанов](https://up.htmlacademy.ru/javascript-individual/2/user/1888439).
-* Наставник: `Неизвестно`.
+* Наставник: [Денис Лопатин](https://htmlacademy.ru/profile/denislopatin).
 
 ---
 

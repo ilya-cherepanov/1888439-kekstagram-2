@@ -4,7 +4,7 @@
  * @param {number} maxLen - Maximum string length
  * @returns {boolean}
  */
-export function isNotLonger(str, maxLen) {
+export const isNotLonger = (str, maxLen) => {
   const segmenter = new Intl.Segmenter();
 
   const segmenterIter = segmenter.segment(str)[Symbol.iterator]();
@@ -14,17 +14,18 @@ export function isNotLonger(str, maxLen) {
   }
 
   return strLen <= maxLen;
-}
+};
 
 /**
  * Checks that the string is palindrome
  * @param {string} str - String to be checked
  * @returns {boolean}
  */
-export function isPalindrome(str) {
+export const isPalindrome = (str) => {
   const isPunctuation = /\p{P}|\p{Z}/u;
 
   const segmenter = new Intl.Segmenter();
+  /** @type {string[]} */
   const chars = [];
   for (const { segment } of segmenter.segment(str)) {
     if (!isPunctuation.test(segment)) {
@@ -43,14 +44,14 @@ export function isPalindrome(str) {
   }
 
   return true;
-}
+};
 
 /**
  * Collects a number from the digits found in an argument
  * @param {string | number} strOrNum - Arbitrary text or number
  * @returns {number}
  */
-export function collectNumber(strOrNum) {
+export const collectNumber = (strOrNum) => {
   const DIGITS = {
     0: 0,
     1: 1,
@@ -66,6 +67,7 @@ export function collectNumber(strOrNum) {
 
   const str = strOrNum.toString();
 
+  /** @type {number[]} */
   const collectedDigits = [];
   for (const char of str) {
     if (char in DIGITS) {
@@ -78,4 +80,4 @@ export function collectNumber(strOrNum) {
   }
 
   return collectedDigits.reduce((num, digit) => num * 10 + digit);
-}
+};
